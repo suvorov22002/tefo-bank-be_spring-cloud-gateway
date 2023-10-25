@@ -1,0 +1,25 @@
+#Spring properties
+spring:
+  config:
+    import: classpath:gateway-config.yml
+  application:
+    name: spring-cloud-gateway
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+
+identity-service:
+  host: ${IDENTITY_SERVICE_HOST}
+
+#Keycloak properties
+keycloak:
+  introspectUri: ${INTROSPECT_URI}
+  clientId: ${CLIENT_ID}
+  clientSecret: ${CLIENT_SECRET}
+
+server:
+  port: 8083
+
