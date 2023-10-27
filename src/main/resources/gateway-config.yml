@@ -1,6 +1,6 @@
 gateway-config-properties:
   permissions:
-    VIEW_BANK_PROFILE:
+    '[VIEW_BANK_PROFILE/EDIT_BANK_PROFILE]':
       - GET:/core-bank-settings/api/v1.0/bank-profile
       - GET:/core-bank-settings/api/v1.0/bank-profile/templates/**
     EDIT_BANK_PROFILE:
@@ -8,78 +8,33 @@ gateway-config-properties:
       - POST:/core-bank-settings/api/v1.0/bank-profile/templates/**
       - PUT:/core-bank-settings/api/v1.0/bank-profile
       - PUT:/core-bank-settings/api/v1.0/bank-profile/templates/**
-    VIEW_SETTINGS_PREFERENCES:
+    '[VIEW_SETTINGS_PREFERENCES/EDIT_SETTINGS_PREFERENCES]':
       - GET:/core-bank-settings/api/v1.0/bank-settings/preferences/**
     EDIT_SETTINGS_PREFERENCES:
       - PUT:/core-bank-settings/api/v1.0/bank-settings/preferences/**
-    VIEW_SETTINGS_TIME:
+    '[VIEW_SETTINGS_TIME/EDIT_SETTINGS_TIME]':
       - GET:/core-bank-settings/api/v1.0/bank-settings/time/**
     EDIT_SETTINGS_TIME:
       - PUT:/core-bank-settings/api/v1.0/bank-settings/time/**
-    VIEW_SETTINGS_CLOSURES:
+    '[VIEW_SETTINGS_CLOSURES/EDIT_SETTINGS_CLOSURES]':
       - GET:/core-bank-settings/api/v1.0/bank-settings/closure/**
     EDIT_SETTINGS_CLOSURES:
       - PUT:/core-bank-settings/api/v1.0/bank-settings/closure/**
-    VIEW_SETTINGS_CUSTOMERS:
+    '[VIEW_SETTINGS_CUSTOMERS/EDIT_SETTINGS_CUSTOMERS]':
     EDIT_SETTINGS_CUSTOMERS:
-    VIEW_SETTINGS_ACCOUNTING:
+    '[VIEW_SETTINGS_ACCOUNTING/EDIT_SETTINGS_ACCOUNTING]':
       - GET:/core-bank-settings/api/v1.0/bank-settings/accounting/**
     EDIT_SETTINGS_ACCOUNTING:
       - PUT:/core-bank-settings/api/v1.0/bank-settings/accounting/**
-    VIEW_SETTINGS_TRANSACTIONS:
+    '[VIEW_SETTINGS_TRANSACTIONS/EDIT_SETTINGS_TRANSACTIONS]':
     EDIT_SETTINGS_TRANSACTIONS:
-    VIEW_SETTINGS_FXPOSITION:
+    '[VIEW_SETTINGS_FXPOSITION/EDIT_SETTINGS_FXPOSITION]':
     EDIT_SETTINGS_FXPOSITION:
-    VIEW_SETTINGS_ACCESS:
+    '[VIEW_SETTINGS_ACCESS/EDIT_SETTINGS_ACCESS]':
       - GET:/core-bank-settings/api/v1.0/bank-settings/access/**
     EDIT_SETTINGS_ACCESS:
       - PUT:/core-bank-settings/api/v1.0/bank-settings/access/**
-    VIEW_UNIT_TYPE:
-      - GET:/org-structure/api/v1.0/unit-types
-      - GET:/org-structure/api/v1.0/unit-types/templates/**
-      - GET:/org-structure/api/v1.0/unit-types/basic-info/**
-      - GET:/org-structure/api/v1.0/unit-types/{id}/**
-      - GET:/org-structure/api/v1.0/unit-types/all/**
-    MANAGE_UNIT_TYPE:
-      - GET:/org-structure/api/v1.0/unit-types
-      - GET:/org-structure/api/v1.0/unit-types/templates/**
-      - GET:/org-structure/api/v1.0/unit-types/basic-info/**
-      - GET:/org-structure/api/v1.0/unit-types/{id}/**
-      - GET:/org-structure/api/v1.0/unit-types/all/**
-      - PUT:/org-structure/api/v1.0/unit-types/{id}/**
-      - PUT:/org-structure/api/v1.0/unit-types/templates/**
-      - POST:/org-structure/api/v1.0/unit-types
-      - POST:/org-structure/api/v1.0/unit-types/templates/**
-    VIEW_UNIT:
-      - GET:/org-structure/api/v1.0/units
-      - GET:/org-structure/api/v1.0/units/templates/**
-      - GET:/org-structure/api/v1.0/units/all/**
-      - GET:/org-structure/api/v1.0/units/active/basic-info
-      - GET:/org-structure/api/v1.0/units/parents/**
-    MANAGE_UNIT:
-      - GET:/org-structure/api/v1.0/units
-      - GET:/org-structure/api/v1.0/units/templates/**
-      - GET:/org-structure/api/v1.0/units/all/**
-      - GET:/org-structure/api/v1.0/units/parents/**
-      - PUT:/org-structure/api/v1.0/units/{id}/**
-      - PUT:/org-structure/api/v1.0/units/templates/**
-      - POST:/org-structure/api/v1.0/units
-      - POST:/org-structure/api/v1.0/units/templates/**
-    VIEW_DICTIONARY:
-      - GET:/dictionary-service/api/v1/dictionaries
-      - GET:/dictionary-service/api/v1/dictionaries/system-dictionaries/**
-      - GET:/dictionary-service/api/v1/dictionaries/user-dictionaries/**
-      - GET:/dictionary-service/api/v1/dictionaries/values/all/**
-      - GET:/dictionary-service/api/v1/dictionaries/values/**
-    MANAGE_DICTIONARY:
-      - GET:/dictionary-service/api/v1/dictionaries
-      - GET:/dictionary-service/api/v1/dictionaries/system-dictionaries/**
-      - GET:/dictionary-service/api/v1/dictionaries/user-dictionaries/**
-      - GET:/dictionary-service/api/v1/dictionaries/values/all/**
-      - GET:/dictionary-service/api/v1/dictionaries/values/**
-      - PUT:/dictionary-service/api/v1/dictionaries/**
-      - POST:/dictionary-service/api/v1/dictionaries/**
-    VIEW_CUSTOM_FIELD:
+    '[VIEW_CUSTOM_FIELD/CHANGE_CUSTOM_FIELD/STATUS_CUSTOM_FIELD/DELETE_CUSTOM_FIELD]':
       - GET:/dictionary-service/api/v1/countries/custom-fields/**
       - GET:/dictionary-service/api/v1/countries/custom-groups/**
       - GET:/org-structure/api/v1.0/units/custom-fields/**
@@ -87,10 +42,15 @@ gateway-config-properties:
       - GET:/org-structure/api/v1.0/unit-types/custom-fields/**
       - GET:/org-structure/api/v1.0/unit-types/custom-groups/**
       - GET:/core-bank-settings/api/v1.0/bank-profile/custom-fields/**
+      - GET:/core-bank-settings/api/v1.0/bank-profile/custom-groups/**
       - GET:/identity-service/api/v1.0/job-types/custom-fields/**
       - GET:/identity-service/api/v1.0/job-types/custom-groups/**
       - GET:/identity-service/api/v1.0/users/custom-fields/**
       - GET:/identity-service/api/v1.0/users/custom-groups/**
+      - GET:/customer-service/api/v1.0/customers/custom-fields/**
+      - GET:/customer-service/api/v1.0/customers/custom-groups/**
+      - GET:/transactions-service/api/v1.0/transactions/custom-fields/**
+      - GET:/transactions-service/api/v1.0/transactions/custom-groups/**
     CHANGE_CUSTOM_FIELD:
       - PUT:/dictionary-service/api/v1/countries/custom-fields/**
       - PUT:/dictionary-service/api/v1/countries/custom-groups/**
@@ -105,7 +65,9 @@ gateway-config-properties:
       - POST:/org-structure/api/v1.0/unit-types/custom-fields/**
       - POST:/org-structure/api/v1.0/unit-types/custom-groups/**
       - PUT:/core-bank-settings/api/v1.0/bank-profile/custom-fields/**
+      - PUT:/core-bank-settings/api/v1.0/bank-profile/custom-groups/**
       - POST:/core-bank-settings/api/v1.0/bank-profile/custom-fields/**
+      - POST:/core-bank-settings/api/v1.0/bank-profile/custom-groups/**
       - PUT:/identity-service/api/v1.0/job-types/custom-fields/**
       - PUT:/identity-service/api/v1.0/job-types/custom-groups/**
       - POST:/identity-service/api/v1.0/job-types/custom-fields/**
@@ -114,7 +76,31 @@ gateway-config-properties:
       - PUT:/identity-service/api/v1.0/users/custom-groups/**
       - POST:/identity-service/api/v1.0/users/custom-fields/**
       - POST:/identity-service/api/v1.0/users/custom-groups/**
+      - PUT:/customer-service/api/v1.0/customers/custom-fields/**
+      - PUT:/customer-service/api/v1.0/customers/custom-groups/**
+      - POST:/customer-service/api/v1.0/customers/custom-fields/**
+      - POST:/customer-service/api/v1.0/customers/custom-groups/**
+      - PUT:/transactions-service/api/v1.0/transactions/custom-fields/**
+      - PUT:/transactions-service/api/v1.0/transactions/custom-groups/**
+      - POST:/transactions-service/api/v1.0/transactions/custom-fields/**
+      - POST:/transactions-service/api/v1.0/transactions/custom-groups/**
     STATUS_CUSTOM_FIELD:
+      - PUT:/dictionary-service/api/v1/countries/custom-fields/approve/**
+      - PUT:/dictionary-service/api/v1/countries/custom-fields/inactivate/**
+      - PUT:/org-structure/api/v1.0/units/custom-fields/approve/**
+      - PUT:/org-structure/api/v1.0/units/custom-fields/inactivate/**
+      - PUT:/org-structure/api/v1.0/unit-types/custom-fields/approve/**
+      - PUT:/org-structure/api/v1.0/unit-types/custom-fields/inactivate/**
+      - PUT:/core-bank-settings/api/v1.0/bank-profile/custom-fields/approve/**
+      - PUT:/core-bank-settings/api/v1.0/bank-profile/custom-fields/inactivate/**
+      - PUT:/identity-service/api/v1.0/job-types/custom-fields/approve/**
+      - PUT:/identity-service/api/v1.0/job-types/custom-fields/inactivate/**
+      - PUT:/identity-service/api/v1.0/users/custom-fields/approve/**
+      - PUT:/identity-service/api/v1.0/users/custom-fields/inactivate/**
+      - PUT:/transactions-service/api/v1.0/transactions/custom-fields/inactivate/**
+      - PUT:/transactions-service/api/v1.0/transactions/custom-fields/activate/**
+      - PUT:/customer-service/api/v1.0/customers/custom-fields/approve/**
+      - PUT:/customer-service/api/v1.0/customers/custom-fields/inactivate/**
     DELETE_CUSTOM_FIELD:
       - DELETE:/dictionary-service/api/v1/countries/custom-fields/**
       - DELETE:/dictionary-service/api/v1/countries/custom-groups/**
@@ -123,64 +109,84 @@ gateway-config-properties:
       - DELETE:/org-structure/api/v1.0/unit-types/custom-fields/**
       - DELETE:/org-structure/api/v1.0/unit-types/custom-groups/**
       - DELETE:/core-bank-settings/api/v1.0/bank-profile/custom-fields/**
+      - DELETE:/core-bank-settings/api/v1.0/bank-profile/custom-groups/**
       - DELETE:/identity-service/api/v1.0/job-types/custom-fields/**
       - DELETE:/identity-service/api/v1.0/job-types/custom-groups/**
       - DELETE:/identity-service/api/v1.0/users/custom-fields/**
       - DELETE:/identity-service/api/v1.0/users/custom-groups/**
-    VIEW_BUSINESS_DAYS:
+      - DELETE:/customer-service/api/v1.0/customers/custom-fields/**
+      - DELETE:/customer-service/api/v1.0/customers/custom-groups/**
+      - DELETE:/transactions-service/api/v1.0/transactions/custom-fields/**
+      - DELETE:/transactions-service/api/v1.0/transactions/custom-groups/**
+    '[VIEW_UNIT_TYPE/MANAGE_UNIT_TYPE]':
+      - GET:/org-structure/api/v1.0/unit-types
+      - GET:/org-structure/api/v1.0/unit-types/templates/**
+      - GET:/org-structure/api/v1.0/unit-types/basic-info/**
+      - GET:/org-structure/api/v1.0/unit-types/{id}/**
+      - GET:/org-structure/api/v1.0/unit-types/all/**
+    MANAGE_UNIT_TYPE:
+      - PUT:/org-structure/api/v1.0/unit-types/{id}/**
+      - PUT:/org-structure/api/v1.0/unit-types/templates/**
+      - POST:/org-structure/api/v1.0/unit-types
+      - POST:/org-structure/api/v1.0/unit-types/templates/**
+    '[VIEW_UNIT/MANAGE_UNIT]':
+      - GET:/org-structure/api/v1.0/units
+      - GET:/org-structure/api/v1.0/units/templates/**
+      - GET:/org-structure/api/v1.0/units/all/**
+      - GET:/org-structure/api/v1.0/units/active/basic-info
+      - GET:/org-structure/api/v1.0/units/parents/**
+    MANAGE_UNIT:
+      - PUT:/org-structure/api/v1.0/units/{id}/**
+      - PUT:/org-structure/api/v1.0/units/templates/**
+      - POST:/org-structure/api/v1.0/units
+      - POST:/org-structure/api/v1.0/units/templates/**
+    '[VIEW_DICTIONARY/MANAGE_DICTIONARY]':
+      - GET:/dictionary-service/api/v1/dictionaries/user-dictionaries/**
+      - GET:/dictionary-service/api/v1/dictionaries/system-dictionaries/**
+    MANAGE_DICTIONARY:
+      - PUT:/dictionary-service/api/v1/dictionaries/**
+      - POST:/dictionary-service/api/v1/dictionaries/**
+    '[VIEW_BUSINESS_DAYS/MANAGE_BUSINESS_DAYS/SET_BUSINESS_DAY]':
       - GET:/core-bank-settings/api/v1.0/business-day/get-available/**
       - GET:/core-bank-settings/api/v1.0/holiday-calendar-day/**
-    MANAGE_BUSINESS_DAYS:
-      - GET:/core-bank-settings/api/v1.0/business-day/get-available/**
-      - GET:/core-bank-settings/api/v1.0/holiday-calendar-day/**
-      - PUT:/core-bank-settings/api/v1.0/business-day/**
-      - PUT:/core-bank-settings/api/v1.0/holiday-calendar-day/**
-      - POST:/core-bank-settings/api/v1.0/holiday-calendar-day/**
     SET_BUSINESS_DAY:
       - POST:/core-bank-settings/api/v1.0/business-day/first/**
-    VIEW_COUNTRIES:
+    MANAGE_BUSINESS_DAYS:
+      - PUT:/core-bank-settings/api/v1.0/holiday-calendar-day/**
+      - POST:/core-bank-settings/api/v1.0/holiday-calendar-day/**
+    '[VIEW_COUNTRIES/MANAGE_COUNTRIES]':
       - GET:/dictionary-service/api/v1/countries/all/**
       - GET:/dictionary-service/api/v1/countries
       - GET:/dictionary-service/api/v1/countries/{id}/**
       - GET:/dictionary-service/api/v1/countries/basic-info
       - GET:/dictionary-service/api/v1/countries/active/basic-info
     MANAGE_COUNTRIES:
-      - GET:/dictionary-service/api/v1/countries/all/**
-      - GET:/dictionary-service/api/v1/countries
-      - GET:/dictionary-service/api/v1/countries/{id}/**
       - PUT:/dictionary-service/api/v1/countries/{id}/**
       - PUT:/dictionary-service/api/v1/countries/templates/{id}/**
       - POST:/dictionary-service/api/v1/countries
       - POST:/dictionary-service/api/v1/countries/templates/**
-    VIEW_CURRENCIES:
+    '[VIEW_CURRENCIES/MANAGE_CURRENCIES/SET_REF_CURRENCY]':
       - GET:/dictionary-service/api/v1/currencies/**
-    MANAGE_CURRENCIES:
-      - GET:/dictionary-service/api/v1/currencies/**
+    '[SET_REF_CURRENCY/MANAGE_CURRENCIES]':
       - PUT:/dictionary-service/api/v1/currencies/**
+    MANAGE_CURRENCIES:
       - POST:/dictionary-service/api/v1/currencies/**
-    SET_REF_CURRENCY:
-      - POST:/dictionary-service/api/v1/currencies/**
-    VIEW_FX_RATE_TYPES:
+    '[VIEW_FX_RATE_TYPES/MANAGE_FX_RATE_TYPES]':
     MANAGE_FX_RATE_TYPES:
-    VIEW_FX_RATES:
+    '[VIEW_FX_RATES/MANAGE_FX_RATES]':
     MANAGE_FX_RATES:
-    VIEW_JOB_TYPE:
+    '[VIEW_JOB_TYPE/MANAGE_JOB_TYPE]':
       - GET:/identity-service/api/v1.0/job-types/{id}/**
       - GET:/identity-service/api/v1.0/job-types
       - GET:/identity-service/api/v1.0/job-types/all/**
       - GET:/identity-service/api/v1.0/job-types/basic-info/**
       - GET:/identity-service/api/v1.0/job-types/templates/**
     MANAGE_JOB_TYPE:
-      - GET:/identity-service/api/v1.0/job-types/{id}/**
-      - GET:/identity-service/api/v1.0/job-types
-      - GET:/identity-service/api/v1.0/job-types/all/**
-      - GET:/identity-service/api/v1.0/job-types/basic-info/**
-      - GET:/identity-service/api/v1.0/job-types/templates/**
       - PUT:/identity-service/api/v1.0/job-types/{id}/**
       - POST:/identity-service/api/v1.0/job-types
       - PUT:/identity-service/api/v1.0/job-types/templates/**
       - POST:/identity-service/api/v1.0/job-types/templates/**
-    VIEW_USER:
+    '[VIEW_USER/MANAGE_USER/APPROVE_USER]':
       - GET:/identity-service/api/v1.0/users
       - GET:/identity-service/api/v1.0/users/{userId}/custom-permissions
       - GET:/identity-service/api/v1.0/users/{userId}/custom-permissions/{userCustomPermissionId}
@@ -189,12 +195,6 @@ gateway-config-properties:
       - GET:/identity-service/api/v1.0/users/all/**
       - GET:/identity-service/api/v1.0/users/active/basic-info
     MANAGE_USER:
-      - GET:/identity-service/api/v1.0/users
-      - GET:/identity-service/api/v1.0/users/{userId}/custom-permissions
-      - GET:/identity-service/api/v1.0/users/{userId}/custom-permissions/{userCustomPermissionId}
-      - GET:/identity-service/api/v1.0/users/{userId}/job-types
-      - GET:/identity-service/api/v1.0/users/{userId}/job-types/{userJobTypeId}
-      - GET:/identity-service/api/v1.0/users/all/**
       - PUT:/identity-service/api/v1.0/users/{id}/**
       - PUT:/identity-service/api/v1.0/users/reset-password/**
       - PUT:/identity-service/api/v1.0/users/inactivate/**
@@ -202,66 +202,30 @@ gateway-config-properties:
       - POST:/identity-service/api/v1.0/users/{userId}/job-types/**
     APPROVE_USER:
       - PUT:/identity-service/api/v1.0/users/approve/**
-    VIEW_DOCUMENT:
+    '[VIEW_DOCUMENT/MANAGE_DOCUMENT/DOWNLOAD_DOCUMENT]':
     MANAGE_DOCUMENT:
     DOWNLOAD_DOCUMENT:
     MANAGE_CONFIG:
-    VIEW_CUSTOMER:
-      - GET:/customer-service/api/v1.0/customers
-      - GET:/customer-service/api/v1.0/customers/**
-    VIEW_CUSTOMER_BUSINESS:
-      - GET:/customer-service/api/v1.0/customers
-      - GET:/customer-service/api/v1.0/customers/**
-    VIEW_CUSTOMER_RISK:
-      - GET:/customer-service/api/v1.0/customers
-      - GET:/customer-service/api/v1.0/customers/**
-    EDIT_CUSTOMER_RM:
+    '[VIEW_CUSTOMER/VIEW_CUSTOMER_BUSINESS/VIEW_CUSTOMER_RISK/EDIT_CUSTOMER_RM/EDIT_CUSTOMER_BO/EDIT_CUSTOMER_AML/EDIT_CUSTOMER_BUSINESS/EDIT_CUSTOMER_RISK/AUTHORISE_CUSTOMER/REJECT_CUSTOMER/CLOSE_CUSTOMER]':
       - GET:/customer-service/api/v1.0/customers
       - GET:/customer-service/api/v1.0/customers/**
       - GET:/identity-service/api/v1.0/customers/templates/**
+    '[EDIT_CUSTOMER_RM/EDIT_CUSTOMER_BO]':
       - POST:/customer-service/api/v1.0/customers
       - POST:/customer-service/api/v1.0/customers/{customerId}/validate
-      - POST:/customer-service/api/v1.0/customers/{customerId}/reject
       - POST:/customer-service/api/v1.0/customers/{customerId}/upload-file
       - DELETE:/customer-service/api/v1.0/customers/{customerId}/files
+    '[EDIT_CUSTOMER_RM/EDIT_CUSTOMER_BO/EDIT_CUSTOMER_AML/EDIT_CUSTOMER_BUSINESS/EDIT_CUSTOMER_RISK]':
       - PUT:/customer-service/api/v1.0/customers/**
-    EDIT_CUSTOMER_BO:
-      - GET:/customer-service/api/v1.0/customers
-      - GET:/customer-service/api/v1.0/customers/**
-      - GET:/identity-service/api/v1.0/customers/templates/**
-      - POST:/customer-service/api/v1.0/customers
-      - POST:/customer-service/api/v1.0/customers/{customerId}/validate
+    '[AUTHORISE_CUSTOMER/EDIT_CUSTOMER_RM/EDIT_CUSTOMER_BO]':
       - POST:/customer-service/api/v1.0/customers/{customerId}/reject
-      - POST:/customer-service/api/v1.0/customers/{customerId}/upload-file
-      - DELETE:/customer-service/api/v1.0/customers/{customerId}/files
-      - PUT:/customer-service/api/v1.0/customers/**
-    EDIT_CUSTOMER_AML:
-      - GET:/customer-service/api/v1.0/customers
-      - GET:/customer-service/api/v1.0/customers/**
-      - GET:/identity-service/api/v1.0/customers/templates/**
-      - PUT:/customer-service/api/v1.0/customers/**
-    EDIT_CUSTOMER_BUSINESS:
-      - GET:/customer-service/api/v1.0/customers
-      - GET:/customer-service/api/v1.0/customers/**
-      - GET:/identity-service/api/v1.0/customers/templates/**
-      - PUT:/customer-service/api/v1.0/customers/**
-    EDIT_CUSTOMER_RISK:
-      - GET:/customer-service/api/v1.0/customers
-      - GET:/customer-service/api/v1.0/customers/**
-      - GET:/identity-service/api/v1.0/customers/templates/**
-      - PUT:/customer-service/api/v1.0/customers/**
     AUTHORISE_CUSTOMER:
-      - GET:/customer-service/api/v1.0/customers
-      - GET:/customer-service/api/v1.0/customers/**
       - POST:/customer-service/api/v1.0/customers/{customerId}/authorize
-      - POST:/customer-service/api/v1.0/customers/{customerId}/reject
     REJECT_CUSTOMER:
     CLOSE_CUSTOMER:
     VIEW_ACCOUNT_CHART:
     MANAGE_GL_ACCOUNT:
-    VIEW_OWN_ACCOUNT:
-      - GET:/account-service/api/v1/accounts/customers/{customerId}
-    VIEW_ALL_ACCOUNT:
+    '[VIEW_OWN_ACCOUNT/VIEW_ALL_ACCOUNT]':
       - GET:/account-service/api/v1/accounts/customers/{customerId}
     EDIT_ACCOUNT:
     APPROVE_ACCOUNT:
@@ -273,18 +237,15 @@ gateway-config-properties:
     MANAGE_TRANSACTION_CHANNEL:
     VIEW_TRANSACTION_TYPE:
     MANAGE_TRANSACTION_TYPE:
-    VIEW_TRANSACTION:
+    '[VIEW_TRANSACTION/CREATE_TRANSACTION/APPROVE_TRANSACTION/EDIT_TRANSACTION/ADJUST_TRANSACTION/DELETE_TRANSACTION]':
       - GET:/transaction-service/api/v1.0/transactions/manual/**
     CREATE_TRANSACTION:
-      - GET:/transactions-service/api/v1.0/transactions/manual/**
       - POST:/transactions-service/api/v.1.0/transactions/manual
     APPROVE_TRANSACTION:
-      - GET:/transaction-service/api/v1.0/transactions/manual/**
       - PUT:/transactions-service/api/v1.0/transactions/manual/manage/approve/**
       - PUT:/transactions-service/api/v1.0/transactions/manual/manage/reject/**
       - PUT:/transactions-service/api/v1.0/transactions/manual/manage/cancel/**
     EDIT_TRANSACTION:
-      - GET:/transaction-service/api/v1.0/transactions/manual/**
       - PUT:/transactions-service/api/v1.0/transactions/manual/{id}
       - PUT:/transactions-service/api/v1.0/transactions/manual/manage/cancel/**
     ADJUST_TRANSACTION:

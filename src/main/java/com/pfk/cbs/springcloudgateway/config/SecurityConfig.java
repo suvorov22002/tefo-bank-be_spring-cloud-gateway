@@ -17,6 +17,9 @@ import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 import org.springframework.security.web.server.context.NoOpServerSecurityContextRepository;
 
+import java.util.List;
+import java.util.Map;
+
 @Configuration
 @EnableWebFluxSecurity
 @RequiredArgsConstructor
@@ -65,11 +68,18 @@ public class SecurityConfig {
     }
 
     private void configureExchange(ServerHttpSecurity.AuthorizeExchangeSpec authorizeExchangeSpec) {
-        gatewayConfigProperties.getPermissions().forEach((permission, urlAndMethodList) ->
+        Map<String, List<String>> permissions = gatewayConfigProperties.getPermissions();
+        permissions.forEach((permission, urlAndMethodList) ->
                 urlAndMethodList.forEach(urlAndMethod -> {
                     UrlMethodInfo urlMethodInfo = ConfigUtils.parseUrlAndMethod(urlAndMethod);
-                    authorizeExchangeSpec.pathMatchers(urlMethodInfo.httpMethod(), urlMethodInfo.path())
-                            .hasRole(permission);
+                    if (permission.contains("/")) {
+                        String[] combinedPermissions = permission.split("/");
+                        authorizeExchangeSpec.pathMatchers(urlMethodInfo.httpMethod(), urlMethodInfo.path())
+                                .hasAnyRole(combinedPermissions);
+                    } else {
+                        authorizeExchangeSpec.pathMatchers(urlMethodInfo.httpMethod(), urlMethodInfo.path())
+                                .hasRole(permission);
+                    }
                 }));
     }
 }

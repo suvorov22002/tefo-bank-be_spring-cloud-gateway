@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public interface IdentityServiceClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/basic-info?{sessionState}")
-//    @Cacheable(value = "introspect_token", key = "#sessionState")
+    @Cacheable(value = "introspect_token", key = "#sessionState")
     UserBasicInfoDto getCurrentUserPermissionsBasicInfo(@PathVariable String sessionState,
                                                         @RequestHeader("Authorization")
                                                         String bearerToken);
